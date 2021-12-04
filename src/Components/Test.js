@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Pager from './Pager'
+import CheckBoxGroup from './CheckBoxGroup'
 
 export default class Test extends Component {
     state = {
@@ -10,7 +10,8 @@ export default class Test extends Component {
             {value:'4',text:'烫头'},
             {value:'5',text:'其他'},
         ],
-        choose:'2'
+        choose:['2'],
+        name:'loves'
     }
     onChange = (val)=>{
         this.setState({
@@ -20,7 +21,8 @@ export default class Test extends Component {
     render() {
         return (
             <div>
-                <Pager total={100}/>
+                <CheckBoxGroup {...this.state} onChange={this.onChange}>
+                </CheckBoxGroup>
             </div>
         )
     }

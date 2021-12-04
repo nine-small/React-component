@@ -1,6 +1,15 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
+import types from '../../utils/commonTypes'
 // 一组多选框
+
+// 属性验证
+CheckBoxGroup.propTypes = {
+    datas:types.datas.isRequired,
+    name:PropTypes.string,
+    choose:PropTypes.arrayOf(PropTypes.string)
+}
+
 
 export default function CheckBoxGroup(props) {
     const {datas,choose,name} = props

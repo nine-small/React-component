@@ -1,8 +1,7 @@
 import React from 'react'
 import './index.css'
-
+import PropTypes from 'prop-types'
 export default function Layout(props) {
-
     return (
         <div className='layout' style={{minWidth:props.minWidth}}>
             <div className="left" style={{'width':props.leftWidth,backgroundColor:'#f40'}}>
@@ -22,4 +21,13 @@ Layout.defaultProps = {
     leftWidth:0,
     rightWidth:0,
     minWidth:800
+}
+
+Layout.propTypes = {
+    left:PropTypes.node,
+    right:PropTypes.node,
+    children:PropTypes.node,
+    leftWidth:PropTypes.number,
+    rightWidth:PropTypes.number,
+    minWidth:PropTypes.number
 }

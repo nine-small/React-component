@@ -4,15 +4,16 @@ import PropTypes from 'prop-types'
 import './index.css'
 
 export default class Pager extends Component {
-
+    // 属性验证
     static propTypes = {
         total:PropTypes.number,
         page:PropTypes.number,
         limit:PropTypes.number,
         showPage:PropTypes.number,
+        limitList:PropTypes.arrayOf(PropTypes.number),
         toPage:PropTypes.number
     }
-
+    // 属性默认值
     static defaultProps = {
         total:100,
         page:1,

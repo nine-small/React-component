@@ -1,4 +1,6 @@
 import React from 'react'
+import types from '../../utils/commonTypes'
+import PropTypes from 'prop-types'
 
 export default function SelectBoxGroup(props) {
     const {datas,choose,name} = props
@@ -24,4 +26,11 @@ export default function SelectBoxGroup(props) {
             </select>
         </div>
     )
+}
+
+SelectBoxGroup.propTypes = {
+    datas:types.datas.isRequired,
+    choose:types.choose,
+    name:PropTypes.string,
+    onChange:PropTypes.func
 }

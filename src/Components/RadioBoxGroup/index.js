@@ -1,5 +1,6 @@
 import React from 'react'
-
+import types from '../../utils/commonTypes'
+import PropTypes from 'prop-types'
 export default function RadioBoxGroup(props) {
     const {datas,choose,name} = props;
     function getBoxGroup(){
@@ -26,4 +27,11 @@ export default function RadioBoxGroup(props) {
             {BoxGroup}
         </div>
     )
+}
+
+RadioBoxGroup.propTypes = {
+    datas:types.datas.isRequired,
+    choose:PropTypes.string,
+    onChange:PropTypes.func,
+    name:PropTypes.string
 }

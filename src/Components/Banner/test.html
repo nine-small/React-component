@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app {
+            width: 100px;
+            height: 100px;
+            background-color: #0f0;
+            position: absolute;
+            left: 100px;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script>
+        const dom = document.getElementById('app')
+        const style = window.getComputedStyle(dom, null)
+        // 不处理透明度
+        function move(dom, origin) {
+            clearInterval(dom.timer);
+            let key;
+            dom.timer = setInterval(() => {
+                console.log(22)
+                key = true;
+                for (prop in origin) {
+                    if (origin.hasOwnProperty(prop)) {
+                        const current = parseInt(getComputedStyle(dom, null)[prop]);
+                        let speed = (origin[prop] - current) / 7;
+                        speed = speed < 0 ? Math.floor(speed) : Math.ceil(speed);
+                        speed !== 0 && (key = false);
+                        dom.style[prop] = current + speed + 'px'
+                    }
+                }
+                if (key) {
+                    clearInterval(dom.timer);
+                    typeof cb === 'function' && cb()
+                }
+            }, 30)
+        }
+        function Obj() {
+            this.left = 500;
+            this.top = 1000;
+        }
+        const cc = new Obj()
+        Obj.prototype.cc = 333;
+
+        const obj = { left: 500, right: 1000 }
+
+        dom.onclick = () => {
+            console.log(123)
+            move(dom, { left: 500, top: 300 })
+        }
+    </script>
+</body>
+
+</html>

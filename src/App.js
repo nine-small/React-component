@@ -1,4 +1,4 @@
-import Test from './Components/Test'
+import Test from './Test'
 function App() {
   return (
     <div>

@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import Banner from "./Banner";
-
-
+import Lx from './Lx'
 
 export default class Test extends Component {
   render() {
-    return (
-      <div>
-        <Banner/>
-      </div>
-    );
+    return <div><Lx/></div>;
   }
 }

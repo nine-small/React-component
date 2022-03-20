@@ -1,8 +1,9 @@
-import Test from './Components/Form/Test'
-function App() {
+import React from 'react';
+import Comp from './test/Comp'
+const App = () => {
   return (
     <div>
-      <Test />
+      <Comp></Comp>
     </div>
   );
 }

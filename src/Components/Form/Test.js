@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Form from './index.js'
+import Form from './'
 
 
 export default class Test extends Component {
